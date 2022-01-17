@@ -24,7 +24,6 @@ import random
 nltk.download('brown')
 nltk.download('universal_tagset')
 np.random.seed(5)
-# !pip install python-Levenshtein
 
 import tensorflow as tf
 import keras
@@ -41,7 +40,7 @@ tf.test.is_gpu_available(
 """### Loading and shuffling data"""
 
 data = ""
-with open('Brown_tagged_train.txt', 'r') as file:
+with open('../data/Brown_tagged_train.txt', 'r') as file:
     data = file.readlines()
     data = [line.rstrip() for line in data]
 
@@ -99,7 +98,7 @@ def add_embeddings(data, embed='glove', dim=300):
         return None
 
     # model = gensim.downloader.load(emb_load)
-    emb_model = KeyedVectors.load('embeddings/'+emb_load)
+    emb_model = KeyedVectors.load('../embeddings/'+emb_load)
 
     # np.random.shuffle(data)
     emb_data_X = []

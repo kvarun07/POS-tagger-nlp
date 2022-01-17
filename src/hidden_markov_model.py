@@ -22,7 +22,7 @@ np.random.seed(5)
 
 lines = []
 
-with open('Brown_tagged_train.txt', 'r') as file:
+with open('../data/Brown_tagged_train.txt', 'r') as file:
   lines = file.readlines()
 
 lines = np.random.shuffle(lines)
